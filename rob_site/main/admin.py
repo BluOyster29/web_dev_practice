@@ -10,6 +10,7 @@ class TutorialAdmin(admin.ModelAdmin):
         ("Title/date", {'fields': ["tutorial_title", "tutorial_published"]}),
         ("Content", {"fields": ["tutorial_content"]}),
         ("links", {'fields' : ['tutorial_links']}),
+        ("songs", {'fields' : ['tutorial_song']})
     ]
     
     formfield_overrides = {

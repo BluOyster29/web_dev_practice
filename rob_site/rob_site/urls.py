@@ -23,5 +23,9 @@ urlpatterns = [
     path("about/", include('main.urls')),
     path('/tinymce/', include('tinymce.urls')),
     path('rob/', include('main.urls')),
-    path('%3Cp%3ENils%3C/p%3E', include('main.urls')),
+    path('nils/', include('main.urls')),
+    path('register/', include('main.urls')),
+    path('rob_song/', include('main.urls')),
+    path('nils_song/', include('main.urls')),
+
 ]
