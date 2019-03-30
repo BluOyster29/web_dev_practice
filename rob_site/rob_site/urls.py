@@ -16,7 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('main.urls')),
+    path("about/", include('main.urls')),
+    path('/tinymce/', include('tinymce.urls')),
+    path('rob/', include('main.urls')),
+    path('%3Cp%3ENils%3C/p%3E', include('main.urls')),
 ]

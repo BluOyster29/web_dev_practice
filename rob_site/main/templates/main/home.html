@@ -1,0 +1,63 @@
+
+{% extends 'main/header.html' %}
+<head>
+    {% load static %}
+    <!-- Prism CSS -->
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript for Materialize CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+    <body>
+
+        {% for tut in tutorials %}
+            <p>{{tut.tutorial_title}}</p>
+            <p>{{tut.tutorial_published}}</p>
+            <p>{{tut.tutorial_content|safe}}</p>
+            <br><br>
+        {% endfor %}
+
+        <!-- Prism JS -->
+        <script src="{% static "tinymce/js/prism.js" %}"></script>
+        
+
+        {% block content %}
+        <div class="row">
+            {% for tut in tutorials %}
+                <div class="col s12 m6">
+                  <div class="card blue-grey darken-1 hoverable">
+                    <div class="card-content white-text">
+                      <span class="card-title">{{tut.tutorial_title}}</span>
+                      <p style="font-size:70%">{{tut.tutorial_published}}</p>
+                      <p style="font-size:40">{{tut.tutorial_content|safe}}</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="{{tut.tutorial_links}}">facebook</a>
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}
+          {% endblock %}
+            <!--
+            {% for car in cars %}
+                <div class="col s12 m6">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">{{car.car_name}}</span>
+                      <p>{{car.car_description}}</p>
+                      <p>{{car.car_age}}</p>
+                         
+                    </div>
+                    <div class="card-action">
+                      <a href="#">This is a link</a>
+                      <a href="#">This is a link</a>
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}
+          </div>
+        -->
+
+    </body>
